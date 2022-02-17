@@ -1,2 +1,2 @@
 # Share Resources here
-Do not merge it with other branches
+Do **NOT** merge it with other branches
