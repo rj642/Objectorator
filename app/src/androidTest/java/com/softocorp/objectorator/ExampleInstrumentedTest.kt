@@ -1,4 +1,4 @@
-package com.example.objectorator
+package com.softocorp.objectorator
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

@@ -1,5 +1,6 @@
-package com.example.objectorator
+package com.softocorp.objectorator
 
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,8 +8,8 @@ import android.text.Spannable
 import android.text.SpannableStringBuilder
 import android.text.style.ForegroundColorSpan
 import android.widget.TextView
-import androidx.core.content.ContextCompat
-import com.example.objectorator.databinding.ActivityMainBinding
+import com.softocorp.objectorator.auth.LoginActivity
+import com.softocorp.objectorator.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,6 +25,10 @@ class MainActivity : AppCompatActivity() {
         binding.apply {
             val getSpan = createSpan(textTitle, 6, 12)
             textTitle.text = getSpan
+            loginButton.setOnClickListener {
+                val intent = Intent(this@MainActivity, LoginActivity::class.java)
+                startActivity(intent)
+            }
             val getSpanTwo = createSpan(generalText, 0, 10)
             generalText.text = getSpanTwo
         }
@@ -40,6 +45,11 @@ class MainActivity : AppCompatActivity() {
             Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
         )
         return spannable
+    }
+
+    override fun onDestroy() {
+        _binding = null
+        super.onDestroy()
     }
 
 }

@@ -1,4 +1,4 @@
-package com.example.objectorator
+package com.softocorp.objectorator
 
 import android.app.Application
 import android.content.Context

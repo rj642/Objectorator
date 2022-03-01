@@ -1,4 +1,4 @@
-package com.example.objectorator
+package com.softocorp.objectorator
 
 import org.junit.Test
 

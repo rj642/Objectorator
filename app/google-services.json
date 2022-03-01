@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "197245226227",
+    "project_id": "objectorator-b4ab4",
+    "storage_bucket": "objectorator-b4ab4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:197245226227:android:c5563874ed5543bb6afb86",
+        "android_client_info": {
+          "package_name": "com.softocorp.objectorator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "197245226227-igupk65te39vl5h3ec2fgl5mvjfhb30p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.softocorp.objectorator",
+            "certificate_hash": "36e9b67633d6add563571f38d31623eb8a79d463"
+          }
+        },
+        {
+          "client_id": "197245226227-dsugkh0alcjo0q1gr0aprh6uucda5t72.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnf9dJX6yKbbJNW_TByND4vEihWnbQ-nk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "197245226227-dsugkh0alcjo0q1gr0aprh6uucda5t72.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
