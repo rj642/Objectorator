@@ -9,6 +9,7 @@ import android.text.SpannableStringBuilder
 import android.text.style.ForegroundColorSpan
 import android.widget.TextView
 import com.softocorp.objectorator.auth.LoginActivity
+import com.softocorp.objectorator.auth.SignUpActivity
 import com.softocorp.objectorator.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -31,6 +32,10 @@ class MainActivity : AppCompatActivity() {
             }
             val getSpanTwo = createSpan(generalText, 0, 10)
             generalText.text = getSpanTwo
+            signupButton.setOnClickListener {
+                val intent = Intent(this@MainActivity, SignUpActivity::class.java)
+                startActivity(intent)
+            }
         }
 
         setContentView(binding.root)

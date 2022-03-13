@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="@color/F7F7"
+    app:cardCornerRadius="10dp"
+    android:layout_marginTop="16dp"
+    app:cardElevation="0dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/statistical"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/background_image" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/statistical">
+
+            <TextView
+                android:id="@+id/reading_name_txtview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reading Name"
+                android:textColor="@color/black"
+                android:fontFamily="@font/inter_medium"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/reading_name_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Description"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/inter_medium"
+                android:textSize="16sp"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/export_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_export_icon"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="16dp" />
+
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>

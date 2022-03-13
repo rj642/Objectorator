@@ -11,4 +11,5 @@
     <color name="red_accent">#FF5656</color>
     <color name="mtrl_textinput_default_box_stroke_color">#6B000000</color>
     <color name="action_toolbar_divider_color">#0D000000</color>
+    <color name="F7F7">#F7F7F7</color>
 </resources>
