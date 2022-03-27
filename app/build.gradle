@@ -45,4 +45,5 @@ dependencies {
 
     // TFLite
     implementation 'org.tensorflow:tensorflow-lite-task-vision:0.3.1'
+    implementation 'com.google.mlkit:object-detection-common:17.1.0'
 }

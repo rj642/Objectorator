@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "F:\\Coding\\Objectorator\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ldltr-v21\\values-ldltr-v21.xml",
+            "outputFile": "/Volumes/RahulJha_SSD/Objectorator/KD_Dir/Objectorator/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ldltr-v21/values-ldltr-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Karandeep\\.gradle\\caches\\transforms-3\\88b5862f7f200365d213d1ed9065ddc4\\transformed\\appcompat-1.2.0\\res\\values-ldltr-v21\\values-ldltr-v21.xml",
+                    "source": "/Users/rahuljha/.gradle/caches/transforms-3/88b5862f7f200365d213d1ed9065ddc4/transformed/appcompat-1.2.0/res/values-ldltr-v21/values-ldltr-v21.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

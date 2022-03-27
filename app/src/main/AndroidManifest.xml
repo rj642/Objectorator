@@ -15,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ObjectDetection">
-        <activity android:name="org.tensorflow.objectorator.objectdetection.MainActivity">
+        <activity android:name="org.tensorflow.objectorator.objectdetection.MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,7 +26,7 @@
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="org.tensorflow.objectorator.objectdetection.fileprovider"
+            android:authorities="org.tensorflow.objectorator.objectdetection.provider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data

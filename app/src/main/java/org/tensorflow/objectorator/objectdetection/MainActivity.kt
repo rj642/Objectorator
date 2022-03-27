@@ -36,8 +36,10 @@ import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.tensorflow.lite.support.image.TensorImage
+import org.tensorflow.lite.task.vision.classifier.ImageClassifier.createFromFileAndOptions
 import org.tensorflow.lite.task.vision.detector.Detection
 import org.tensorflow.lite.task.vision.detector.ObjectDetector
+import org.tensorflow.lite.task.vision.detector.ObjectDetector.createFromFileAndOptions
 import java.io.File
 import java.io.IOException
 import java.text.SimpleDateFormat
@@ -124,9 +126,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 .setMaxResults(5)
                 .setScoreThreshold(0.3f)
                 .build()
-        val detector = ObjectDetector.createFromFileAndOptions(
+        val detector = createFromFileAndOptions(
                 this,
-                "weapon.tflite",
+                "model_unquant.tflite",
                 options
         )
 
@@ -209,21 +211,21 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             inSampleSize = scaleFactor
             inMutable = true
         }
-        val exifInterface = ExifInterface(currentPhotoPath)
+        val exifInterface = android.media.ExifInterface(currentPhotoPath)
         val orientation = exifInterface.getAttributeInt(
-            ExifInterface.TAG_ORIENTATION,
-            ExifInterface.ORIENTATION_UNDEFINED
+            android.media.ExifInterface.TAG_ORIENTATION,
+            android.media.ExifInterface.ORIENTATION_UNDEFINED
         )
 
         val bitmap = BitmapFactory.decodeFile(currentPhotoPath, bmOptions)
         return when (orientation) {
-            ExifInterface.ORIENTATION_ROTATE_90 -> {
+            android.media.ExifInterface.ORIENTATION_ROTATE_90 -> {
                 rotateImage(bitmap, 90f)
             }
-            ExifInterface.ORIENTATION_ROTATE_180 -> {
+            android.media.ExifInterface.ORIENTATION_ROTATE_180 -> {
                 rotateImage(bitmap, 180f)
             }
-            ExifInterface.ORIENTATION_ROTATE_270 -> {
+            android.media.ExifInterface.ORIENTATION_ROTATE_270 -> {
                 rotateImage(bitmap, 270f)
             }
             else -> {
@@ -293,7 +295,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 photoFile?.also {
                     val photoURI: Uri = FileProvider.getUriForFile(
                         this,
-                        "org.tensorflow.codelabs.objectdetection.fileprovider",
+                        "org.tensorflow.objectorator.objectdetection.provider",
                         it
                     )
                     takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI)
