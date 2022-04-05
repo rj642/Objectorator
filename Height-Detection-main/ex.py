@@ -1,6 +1,5 @@
 # install opencv "pip install opencv-python"
 import cv2
-import subprocess
 import os
 import pyttsx3
 cmd = ' Body_Detection.py'
@@ -9,11 +8,11 @@ directory = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 print(directory)
 # distance from camera to object(face) measured
 # centimeter
-Known_distance = 60.96
+Known_distance = 46
 
 # width of face in the real world or Object Plane
 # centimeter
-Known_width = 14.3
+Known_width = 13
 
 # Colors
 GREEN = (0, 255, 0)
@@ -37,7 +36,7 @@ def speak(audio):
 fonts = cv2.FONT_HERSHEY_COMPLEX
 
 # face detector object
-face_detector = cv2.CascadeClassifier(directory+"\\.venv\\Lib\\site-packages\\cv2\\data\\haarcascade_frontalface_default.xml")
+face_detector = cv2.CascadeClassifier(directory+"\\venv\\Lib\\site-packages\\cv2\\data\\haarcascade_frontalface_default.xml")
 
 # focal length finder function
 def Focal_Length_Finder(measured_distance, real_width, width_in_rf_image):
@@ -60,8 +59,7 @@ def face_data(image):
     face_width = 0 # making face width to zero
 
     gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-    cv2.imshow("gray-image",gray_image)
-
+    
     # detecting face in the image
     faces = face_detector.detectMultiScale(gray_image, 1.3, 5)
 
@@ -95,7 +93,7 @@ Focal_length_found = Focal_Length_Finder(
 print(Focal_length_found)
 
 # show the reference image
-cv2.imshow("ref_image", ref_image)
+# cv2.imshow("ref_image", ref_image)
 
 # initialize the camera object so that we
 # can get frame from it

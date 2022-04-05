@@ -2,12 +2,9 @@
 import cv2 as cv
 import mediapipe as mp
 from playsound import playsound
-import numpy as np
 import pyttsx3
-import pygame
 import time
-import math
-from numpy.lib import utils
+import os
 mpPose = mp.solutions.pose
 mpFaceMesh = mp.solutions.face_mesh
 facemesh = mpFaceMesh.FaceMesh(max_num_faces = 2)
@@ -35,8 +32,10 @@ def speak(audio):
     # Blocks while processing all the currently
     # queued commands
     engine.runAndWait()
-# speak("I am about to measure your height now sir")
-# speak("Although I reach a precision upto ninety eight percent")
+    # speak("I am about to measure your height now sir")
+    # speak("Although I reach a precision upto ninety eight percent")
+
+
 while True:
     isTrue,img = capture.read()
     img_rgb = cv.cvtColor(img , cv.COLOR_BGR2RGB)
@@ -52,7 +51,7 @@ while True:
             h , w , c = img.shape
             if id == 32 or id==31 :
                 cx1 , cy1 = int(lm.x*w) , int(lm.y*h)
-                cv.circle(img,(cx1,cy1),15,(0,0,0),cv.FILLED)
+                # cv.circle(img,(cx1,cy1),15,(0,0,0),cv.FILLED)
                 d = ((cx2-cx1)**2 + (cy2-cy1)**2)**0.5
                 # height = round(utils.findDis((cx1,cy1//scale,cx2,cy2//scale)/10),1)
                 di = round(d*0.5)
@@ -64,11 +63,10 @@ while True:
                 # speak("I am done")
                 # speak("You can relax now")
                 # speak("Press q and give me some rest now.")
-                # # if ord('q'):
-                # #     cv.cv.destroyAllWindows()
-                # # break
+                # if ord('q'):
+                #     cv.cv.destroyAllWindows()
+                # break
 
-                dom = ((lm.z-0)**2 + (lm.y-0)**2)**0.5
                 # height = round(utils.findDis((cx1,cy1//scale,cx2,cy2//scale)/10),1)
 
                 cv.putText(img ,"Height : ",(40,70),cv.FONT_HERSHEY_COMPLEX,1,(255,255,0),thickness=2)
@@ -81,7 +79,7 @@ while True:
                 cx2 , cy2 = int(lm.x*w) , int(lm.y*h)
                 # cx2 = cx230
                 cy2 = cy2 + 20
-                cv.circle(img,(cx2,cy2),15,(0,0,0),cv.FILLED)
+                # cv.circle(img,(cx2,cy2),15,(0,0,0),cv.FILLED)
     img = cv.resize(img , (700,500))
     ctime = time.time()
     fps = 1/(ctime-ptime)
